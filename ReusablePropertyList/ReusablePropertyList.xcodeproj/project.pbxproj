@@ -17,6 +17,7 @@
 		75633202219B69390019F6E1 /* ZapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75633200219B69390019F6E1 /* ZapCollectionViewCell.swift */; };
 		75633203219B69390019F6E1 /* ZapCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75633201219B69390019F6E1 /* ZapCollectionViewCell.xib */; };
 		75633205219B6D140019F6E1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75633204219B6D140019F6E1 /* MainViewController.swift */; };
+		D5C2788C219BAB2D00C470F1 /* CardsFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C2788B219BAB2D00C470F1 /* CardsFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		75633200219B69390019F6E1 /* ZapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZapCollectionViewCell.swift; sourceTree = "<group>"; };
 		75633201219B69390019F6E1 /* ZapCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZapCollectionViewCell.xib; sourceTree = "<group>"; };
 		75633204219B6D140019F6E1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D5C2788B219BAB2D00C470F1 /* CardsFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				756331E6219B54870019F6E1 /* AppDelegate.swift */,
 				756331E8219B54870019F6E1 /* ReusablePropertyListViewController.swift */,
+				D5C2788B219BAB2D00C470F1 /* CardsFlowLayout.swift */,
 				75633204219B6D140019F6E1 /* MainViewController.swift */,
 				756331FC219B692D0019F6E1 /* VRPropertyCollectionViewCell.swift */,
 				756331FD219B692D0019F6E1 /* VRPropertyCollectionViewCell.xib */,
@@ -157,6 +160,7 @@
 				756331E9219B54870019F6E1 /* ReusablePropertyListViewController.swift in Sources */,
 				756331E7219B54870019F6E1 /* AppDelegate.swift in Sources */,
 				75633205219B6D140019F6E1 /* MainViewController.swift in Sources */,
+				D5C2788C219BAB2D00C470F1 /* CardsFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

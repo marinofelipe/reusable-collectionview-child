@@ -28,9 +28,13 @@ class MainViewController: UIViewController {
     private func setupContainers() {
         let vrPropertyListController = ReusablePropertyListViewController(datasource: self, cellId: VRPropertyCollectionViewCell.id, collectionTag: CollectionView.vr.rawValue)
         vrPropertyListController.scrollDirection = .horizontal
+        vrPropertyListController.numberOfHorizontalVisibleCards = 3
+        vrPropertyListController.numberOfVerticalVisibleCards = 1
         add(vrPropertyListController, to: horizontalListContainer)
         
         let zapPropertyListController = ReusablePropertyListViewController(datasource: self, cellId: ZapCollectionViewCell.id, collectionTag: CollectionView.zap.rawValue)
+        zapPropertyListController.numberOfHorizontalVisibleCards = 2
+        zapPropertyListController.numberOfVerticalVisibleCards = 3
         add(zapPropertyListController, to: verticalListContainer)
     }
 }
@@ -47,12 +51,14 @@ extension MainViewController: PropertyListDatasource {
         if collectionView.tag == CollectionView.vr.rawValue {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VRPropertyCollectionViewCell.id, for: indexPath) as? VRPropertyCollectionViewCell else { fatalError() }
             cell.neighborhoodLabel.text = vrPropertyModels[indexPath.item].neighborhood
+            cell.backgroundColor = .blue
             return cell
         }
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ZapCollectionViewCell.id, for: indexPath) as? ZapCollectionViewCell else { fatalError() }
         cell.codLabel.text = String(zapPropertyModels[indexPath.item].cod)
         cell.streetLabel.text = zapPropertyModels[indexPath.item].street
+        cell.backgroundColor = .orange
         return cell
     }
     

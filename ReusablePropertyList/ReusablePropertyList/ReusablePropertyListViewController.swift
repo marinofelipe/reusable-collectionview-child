@@ -14,21 +14,15 @@ protocol PropertyListDatasource: class {
     func collectionView(tag: Int, didSelectRow at: IndexPath)
 }
 
-class ReusablePropertyListViewController: UIViewController {
+class ReusablePropertyListViewController: UIViewController, CardsLayoutDelegate {
     
     private var collectionView: UICollectionView!
     
     private weak var datasource: PropertyListDatasource!
     
-    var cellsForRow: Int = 1
-    var cellHeight: CGFloat = 60.0
-    var scrollDirection: UICollectionView.ScrollDirection = .vertical {
-        didSet {
-            let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
-            flowLayout?.scrollDirection = scrollDirection
-            collectionView.collectionViewLayout = flowLayout!
-        }
-    }
+    var numberOfHorizontalVisibleCards: Int = 1
+    var numberOfVerticalVisibleCards: Int = 1
+    var scrollDirection: UICollectionView.ScrollDirection = .vertical
     var margin: CGFloat = 16.0
     
     init(datasource: PropertyListDatasource, cellId: String, collectionTag: Int) {
@@ -48,9 +42,9 @@ class ReusablePropertyListViewController: UIViewController {
     }
     
     private func setupCollectionView(tag: Int) {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = scrollDirection
-        collectionView = UICollectionView(frame: view.frame, collectionViewLayout: flowLayout)
+        let cardsFlowLayout = CardsFlowLayout()
+        cardsFlowLayout.delegate = self
+        collectionView = UICollectionView(frame: view.frame, collectionViewLayout: cardsFlowLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(collectionView)
@@ -66,6 +60,7 @@ class ReusablePropertyListViewController: UIViewController {
         collectionView.dataSource = self
         
         collectionView.tag = tag
+        collectionView.isPagingEnabled = true
     }
     
     private func register(id: String) {
@@ -93,13 +88,3 @@ extension ReusablePropertyListViewController: UICollectionViewDelegate {
         // or call delegate to download and increase data
     }
 }
-
-extension ReusablePropertyListViewController: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let cellWidth = (view.bounds.width / CGFloat(cellsForRow)) - margin * 2.0
-        return CGSize(width: cellWidth, height: cellHeight)
-    }
-}
-// TODO: custom flow layout that sets cells size accordingly to number of cells by rows and height
