@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5IG-WS-QPQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="qdv-cf-qwH">
+            <objects>
+                <viewController id="5IG-WS-QPQ" customClass="MainViewController" customModule="ReusablePropertyList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mfs-5n-I3W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0uw-Yt-HEc" userLabel="HorizontalListContainer">
+                                <rect key="frame" x="0.0" y="20" width="375" height="167"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1HN-o0-HNM" userLabel="VerticalListContainer">
+                                <rect key="frame" x="0.0" y="187" width="375" height="480"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0uw-Yt-HEc" firstAttribute="leading" secondItem="XDv-aB-Xyy" secondAttribute="leading" id="1Sk-qS-CIg"/>
+                            <constraint firstItem="0uw-Yt-HEc" firstAttribute="top" secondItem="XDv-aB-Xyy" secondAttribute="top" id="A8o-Bh-e5W"/>
+                            <constraint firstItem="1HN-o0-HNM" firstAttribute="leading" secondItem="XDv-aB-Xyy" secondAttribute="leading" id="AB0-bA-Euz"/>
+                            <constraint firstItem="1HN-o0-HNM" firstAttribute="top" secondItem="0uw-Yt-HEc" secondAttribute="bottom" id="Cp4-cT-FM2"/>
+                            <constraint firstItem="0uw-Yt-HEc" firstAttribute="height" secondItem="Mfs-5n-I3W" secondAttribute="height" multiplier="0.25" id="PEY-BA-w44"/>
+                            <constraint firstItem="XDv-aB-Xyy" firstAttribute="bottom" secondItem="1HN-o0-HNM" secondAttribute="bottom" id="Rfd-NB-SV0"/>
+                            <constraint firstItem="1HN-o0-HNM" firstAttribute="trailing" secondItem="XDv-aB-Xyy" secondAttribute="trailing" id="aXB-Ff-XYJ"/>
+                            <constraint firstItem="XDv-aB-Xyy" firstAttribute="trailing" secondItem="0uw-Yt-HEc" secondAttribute="trailing" id="zg1-Y3-2Kh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XDv-aB-Xyy"/>
+                    </view>
+                    <connections>
+                        <outlet property="horizontalListContainer" destination="0uw-Yt-HEc" id="cE8-Tt-r3z"/>
+                        <outlet property="verticalListContainer" destination="1HN-o0-HNM" id="xGl-5U-YXq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IAr-rr-qFp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-922.39999999999998" y="26.53673163418291"/>
+        </scene>
+    </scenes>
+</document>
